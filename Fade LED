@@ -1,0 +1,23 @@
+int time = 0;
+
+int brightness = 0;
+
+int i = 0;
+
+void setup()
+{
+  pinMode(10, OUTPUT);
+}
+
+void loop()
+{
+  time = 20;
+  for (brightness = 0; brightness <= 255; brightness += 5) {
+    analogWrite(10, brightness);
+    delay(time); // Wait for time millisecond(s)
+  }
+  for (brightness = 255; brightness >= 0; brightness -= 5) {
+    analogWrite(10, brightness);
+    delay(time); // Wait for time millisecond(s)
+  }
+}
