@@ -1,0 +1,32 @@
+int speedOff = 0;
+
+int speedOn = 0;
+
+int sensor = 0;
+
+int last_sensor;
+
+String output;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(A0, INPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  sensor = analogRead(A0);
+  digitalWrite(13, HIGH);
+  delay(sensor); // Wait for sensor millisecond(s)
+  digitalWrite(13, LOW);
+  delay(sensor); // Wait for sensor millisecond(s)
+  if(sensor != last_sensor){
+    output = String(sensor) + "ms";
+  	Serial.println(output);
+  }
+  last_sensor = sensor;
+ // output = String(sensor) + "ms";
+  //Serial.println(output);
+}
