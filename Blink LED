@@ -1,0 +1,18 @@
+int speedOff = 0;
+
+int speedOn = 0;
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  speedOn = 900;
+  speedOff = 300;
+  digitalWrite(13, HIGH);
+  delay(speedOn); // Wait for speedOn millisecond(s)
+  digitalWrite(13, LOW);
+  delay(speedOff); // Wait for speedOff millisecond(s)
+}
